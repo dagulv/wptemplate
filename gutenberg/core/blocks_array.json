@@ -1,0 +1,9 @@
+{
+  "blocks_array": [
+    "image",
+    "video",
+    "breadcrumbs",
+    "hero",
+    "repeater-fields-grid"
+  ]
+}
