@@ -1,18 +1,75 @@
-body {
-  // COLORS
-  --c-brand: #2f3772;
-  --c-sec: #8c2c58;
-  --c-txt: #434f58;
-  --c-silver: #f2edf5;
-  // RGB variations: for hover effects for example
-  --c-brand--rgb: 47, 55, 114;
-  --c-sec--rgb: 140, 44, 88;
-  --c-txt--rgb: 67, 79, 88;
-  --c-silver--rgb: 242, 237, 245;
+//Base
+$base: 16px;
 
-  --vh100: calc(var(--vh, 1vh) * 100);
+//Colors
+$color-blue-50: #DCEEFB;
+$color-blue-100: #B6E0FE;
+$color-blue-200: #84C5F4;
+$color-blue-300: #62B0E8;
+$color-blue-400: #4098D7;
+$color-blue-500: #2680C2;
+$color-blue-600: #186FAF;
+$color-blue-700: #0F609B;
+$color-blue-800: #0A558C;
+$color-blue-900: #003E6B;
 
-  // FONTS
-  --font-titles: 'Montserrat', system-ui;
-  --font-def: 'Poppins', system-ui;
-}
+$color-grey-50: #F0F4F8;
+$color-grey-100: #D9E2EC;
+$color-grey-200: #BCCCDC;
+$color-grey-300: #9FB3C8;
+$color-grey-400: #829AB1;
+$color-grey-500: #627D98;
+$color-grey-600: #486581;
+$color-grey-700: #334E68;
+$color-grey-800: #243B53;
+$color-grey-900: #102A43;
+
+//Fonts
+$font-family: 'Inter', sans-serif;
+
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-bold: 600;
+
+$display-xxl: 72px;
+$display-xxl-line: 90px;
+
+$display-xl: 60px;
+$display-xl-line: 72px;
+
+$display-l: 48px;
+$display-l-line: 60px;
+
+$display-m: 36px;
+$display-m-line: 44px;
+
+$display-s: 30px;
+$display-s-line: 38px;
+
+$display-xs: 24px;
+$display-xs-line: 32px;
+
+$text-xl: 20px;
+$text-xl-line: 30px;
+
+$text-l: 18px;
+$text-l-line: 28px;
+
+$text-m: 16px;
+$text-m-line: 24px;
+
+$text-s: 14px;
+$text-s-line: 20px;
+
+$text-xs: 12px;
+$text-xs-line: 18px;
+
+//Misc
+$transition: 150ms;
+
+$breakpoints: (
+	's':  640px,
+	'm':  768px,
+	'l':  1024px,
+	'xl': 1280px,
+) !default;

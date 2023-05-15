@@ -37,7 +37,7 @@ final class Template9c18dbff7d extends Latte\Runtime\Template
         <span class="span-icon"></span>
       </button>
       ';
-		echo LR\Filters::escapeHtmlText(wp_nav_menu(['menu' => 'top', 'theme_location' => 'menu-1', 'container' => 'div', 'container_id' => 'tr-main-menu', 'container_class' => 'navbar-collapse', 'menu_id' => 'primary-menu', 'menu_class' => 'navbar-nav', 'depth' => 2, 'fallback_cb' => 'ThemeRedoneWalker::fallback', 'walker' => new ThemeRedoneWalker])) /* line 23 */;
+		echo LR\Filters::escapeHtmlText(wp_nav_menu(['menu' => 'top', 'theme_location' => 'menu-1', 'container' => 'div', 'container_class' => 'navbar-collapse', 'menu_id' => 'primary-menu', 'menu_class' => 'navbar-nav', 'depth' => 2, 'fallback_cb' => 'ThemeRedoneWalker::fallback', 'walker' => new ThemeRedoneWalker])) /* line 23 */;
 		echo '
     </nav> 
   </div>

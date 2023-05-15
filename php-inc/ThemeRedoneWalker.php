@@ -17,7 +17,7 @@ class ThemeRedoneWalker extends Walker_Nav_Menu
      */
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<div class=\"collapsible__content\"><div class=\"collapsible__content__inner\">\n";
+        $output .= "\n$indent<div class=\"sub-menu\"><div class=\"sub-menu__inner\">\n";
     }
     /**
      * Ends the list of after the elements are added.
@@ -161,17 +161,17 @@ class ThemeRedoneWalker extends Walker_Nav_Menu
             $item_output .= '</a>';
             $item_output .= $args->after;
         } else {
-            if (in_array('menu-item-has-children', $classes)) {
-                $item_output .= '<button class="collapsible__trigger" aria-label="Toggle Dropdown">';
-            }
+            // if (in_array('menu-item-has-children', $classes)) {
+            //     $item_output .= '<button class="collapsible__trigger" aria-label="Toggle Dropdown">';
+            // }
             $item_output .= '<a'. $attributes .'>';
             /** This filter is documented in wp-includes/post-template.php */
             $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
             $item_output .= '</a>';
-            if (in_array('menu-item-has-children', $classes)) {
-                $item_output .= '<span class="chevron"></span>';
-                $item_output .= '</button>';
-            }
+            // if (in_array('menu-item-has-children', $classes)) {
+            //     $item_output .= '<span class="chevron"></span>';
+            //     $item_output .= '</button>';
+            // }
             $item_output .= $args->after;
         }
         /**
