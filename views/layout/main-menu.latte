@@ -1,30 +1,45 @@
 <header class="header">
 	<div class="container">
+    <a 
+      class="navbar-brand" 
+      href="{esc_url( home_url( '/' ) )}"
+      itemprop="url" 
+      aria-label="{get_bloginfo('name')} Logo - Go to homepage"
+    >
+      {tr_get_media('logo.svg')}
+    </a>
+    <button 
+      class="navbar-toggler collapsed" 
+      type="button" 
+      data-toggle="collapse" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+    >
+    </button>
     <nav class="navbar">
-      <a 
-      	class="navbar-brand" 
-      	href="{esc_url( home_url( '/' ) )}"
-      	itemprop="url" 
-        aria-label="{get_bloginfo('name')} Logo - Go to homepage"
-      >
-        {tr_get_media('logo.svg')}
-      </a>
-      <button 
-        class="navbar-toggler collapsed" 
-        type="button" 
-        data-toggle="collapse" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation"
-      >
-        <span class="span-icon"></span>
-        <span class="span-icon"></span>
-        <span class="span-icon"></span>
-      </button>
+      <div class="mobile-sidebar-header container">
+        <a 
+          class="navbar-brand" 
+          href="{esc_url( home_url( '/' ) )}"
+          itemprop="url" 
+          aria-label="{get_bloginfo('name')} Logo - Go to homepage"
+        >
+          {tr_get_media('logo.svg')}
+        </a>
+        <button 
+          class="navbar-closer collapsed" 
+          type="button" 
+          data-toggle="collapse" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+        >
+        </button>
+      </div>
       {wp_nav_menu([
         'menu'            => 'top',
         'theme_location'  => 'menu-1',
         'container'       => 'div',
-        'container_class' => 'navbar-collapse',
+        'container_class' => 'navbar-collapse container',
         'menu_id'         => 'primary-menu',
         'menu_class'      => 'navbar-nav',
         'depth'           => 2,

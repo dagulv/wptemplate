@@ -67,7 +67,7 @@ class ThemeRedoneWalker extends Walker_Nav_Menu
         $class_names .= ' nav-item';
 
         if (in_array('menu-item-has-children', $classes)) {
-            $class_names .= ' collapsible';
+            $class_names .= ' collapsible collapsible-only-mobile';
         }
         if (in_array('current-menu-item', $classes)) {
             $class_names .= ' active';
@@ -116,6 +116,9 @@ class ThemeRedoneWalker extends Walker_Nav_Menu
         // New
         if ($depth === 0) {
             $atts['class'] = 'nav-link';
+            // if (in_array('menu-item-has-children', $classes)) {
+            //     $atts['class'] .= ' collapsible__trigger';
+            // }
         }
         if ($depth > 0) {
             $manual_class = array_values($classes)[0] .' '. 'nav-link';
@@ -169,7 +172,6 @@ class ThemeRedoneWalker extends Walker_Nav_Menu
             $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
             $item_output .= '</a>';
             if (in_array('menu-item-has-children', $classes)) {
-                $item_output .= '<span class="chevron"></span>';
                 $item_output .= '</button>';
             }
             $item_output .= $args->after;

@@ -8,6 +8,7 @@ class Header {
   constructor(hasScroll) {
     this.header = document.querySelector('.header')
     this.navToggle = this.header.querySelector('.navbar-toggler')
+    this.navClose = this.header.querySelector('.navbar-closer')
     this.backdrop = document.querySelector('.backdrop')
     this.hasScroll = hasScroll
     this.scrollTop
@@ -32,6 +33,12 @@ class Header {
     })
 
     this.backdrop.addEventListener('click', () => {
+      if (document.body.classList.contains('js-mob-menu-open')) {
+        document.body.classList.remove('js-mob-menu-open')
+      }
+    })
+
+    this.navClose.addEventListener('click', () => {
       if (document.body.classList.contains('js-mob-menu-open')) {
         document.body.classList.remove('js-mob-menu-open')
       }

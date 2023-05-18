@@ -1,15 +1,23 @@
 //js-mob-menu-open class toggle on open/close
 
+.js-mob-menu-open .navbar {
+  transform: translateX(0%) !important;
+  visibility: visible !important;
+}
+
 .header {
+  font-size: $text-m;
+  line-height: $text-m-line;
+  font-weight: $weight-medium;
+  color: $color-grey-900;
+
   display: block;
   max-height: $base * 3.5;
   height: 100%;
 
-  .navbar {
+  .container {
     display: flex;
     justify-content: space-between;
-    color: $color-grey-900;
-    font-weight: $weight-medium;
 
     .navbar-brand {
       padding: $base * 0.5 0;
@@ -21,18 +29,125 @@
       }
     }
 
-    .navbar-toggler {
-
+    .navbar-toggler,
+    .navbar-closer {
+        width: $base * 2;
+        height: $base * 3.5;
+        background: no-repeat center center;
+        outline: none;
     }
 
-    .navbar-collapse {
+    .navbar-toggler { background-image: url('wp-content/themes/wptemplate/assets/svg/hamburger.svg'); }
+    .navbar-closer { background-image: url('wp-content/themes/wptemplate/assets/svg/close.svg'); }
 
-      ul {
+    .navbar {
+      display: flex;
+
+      @include breakpoint-max(l) {
+        position: absolute;
+        inset: 0;
+
+        display: block;
+        visibility: hidden;
+        background-color: #fff;
+
+        transition: transform 250ms ease-in, visibility 250ms;
+        transform: translateX(-100%);
+
+        .mobile-sidebar-header {
+          display: flex !important;
+          justify-content: space-between;
+        }
+
+        .navbar-collapse {
+
+          .navbar-nav {
+            flex-direction: column;
+            width: 100%;
+  
+            li {
+              
+              a {
+                padding: $base * 0.75 0;
+              }
+
+              &.menu-item-has-children {
+                .collapsible__trigger {
+                  color: inherit;
+                  position: relative;
+                  padding: 0;
+                  background-color: inherit;
+                  font-weight: inherit;
+                  width: 100%;
+                  outline: inherit;
+
+                  &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                  }
+
+                  a {
+                    width: 100%;
+                  }
+
+                  & > a::after {
+                    margin-left: auto;
+                    margin-right: $base * 0.5625;
+                  }
+                }
+
+                .collapsible__content {
+                  &__inner {
+                    a {
+                      font-weight: $weight-regular;
+                      padding: $base * 0.5 $base;
+                      color: $color-grey-800;
+                    }
+                  }
+                }
+              
+              }
+            }
+
+
+          }
+        }
+      }
+
+      .mobile-sidebar-header {
+        display: none;
+      }
+
+      .navbar-nav {
         display: flex;
-        height: 100%;
+        // height: 100%;
         list-style-type: none;
 
         li {
+          cursor: pointer;
+
+          &.menu-item-has-children {
+            &:hover,
+            &.transition-forwards,
+            &.active {
+              .collapsible__trigger > a::after {
+                rotate: 0deg;
+              }
+            }
+
+            .collapsible__trigger {
+              & > a::after {
+                content: '';
+                width: $base;
+                height: $base;
+                background: url('wp-content/themes/wptemplate/assets/svg/chevron.svg') no-repeat center center;
+                rotate: 180deg;
+                margin-left: $base * 0.75;
+                transition: $transition;
+              }
+            }
+          }
 
           a {
             display: flex;
@@ -49,67 +164,7 @@
             }
           }
 
-          &.menu-item-has-children {
-            position: relative;
-
-            & > a::after {
-              content: '';
-              width: $base;
-              height: $base;
-              background: url('wp-content/themes/wptemplate/assets/svg/chevron.svg') no-repeat center center;
-              rotate: 180deg;
-              margin-left: $base * 0.75;
-              transition: $transition;
-            }
-            
-            .sub-menu {
-              position: absolute;
-              right: $base * -1;
-              top: calc(100% - #{$base * 0.5});
-              min-width: $base * 13;
-
-              background-color: #fff;
-              border-radius: $base * 0.5;
-              overflow: hidden;
-
-              color: $color-grey-800;
-
-              visibility: hidden;
-              opacity: 0;
-              transform: translateY($base * 0.25);
-              transition: $transition;
-
-              a {
-                padding: $base;
-                color: inherit;
-
-                &:hover {
-                  background-color: $color-grey-50;
-                  color: $color-grey-900;
-                }
-              }
-            }
-          }
-
-          &:hover {
-
-            a::after {
-              rotate: 0deg;
-            }
-
-            .sub-menu {
-              visibility: visible;
-              opacity: 1;
-              transform: translate(0);
-            }
-          }
-
-          // &:last-of-type {
-
-          //   a {
-          //     padding-right: 0;
-          //   }
-          // }
+          
         }
       }
     }
@@ -119,7 +174,7 @@
   @include breakpoint(l) {
     max-height: $base * 5;
 
-    .navbar {
+    .container {
   
       .navbar-brand {
         padding: $base 0;
@@ -132,6 +187,69 @@
 
       .navbar-toggler {
         display: none;
+      }
+
+      .navbar {
+        .navbar-collapse {
+          padding: 0;
+          
+          .navbar-nav {
+            
+            li {
+              
+              &.menu-item-has-children {
+                position: relative;
+
+                .collapsible__trigger {
+                  display: contents; 
+                  font-weight: inherit;
+                  color: inherit;
+                }
+
+                .collapsible__content {
+                  position: absolute;
+                  right: $base * -1;
+                  top: calc(100% - #{$base * 0.5});
+                  min-width: $base * 13;
+                  height: auto !important;
+    
+                  background-color: #fff;
+                  border-radius: $base * 0.5;
+                  overflow: hidden;
+    
+                  color: $color-grey-800;
+                  box-shadow: $shadow-m;
+    
+                  visibility: hidden !important;
+                  opacity: 0;
+                  transform: translateY($base * 0.25);
+                  transition: $transition;
+    
+                  a {
+                    padding: $base;
+                    color: inherit;
+                    font-size: inherit;
+                    font-weight: inherit;
+    
+                    &:hover {
+                      background-color: $color-grey-50;
+                      color: $color-grey-900;
+                    }
+                  }
+                }
+
+                &:hover {
+                  .collapsible__content {
+                    visibility: visible !important;
+                    opacity: 1;
+                    transform: translate(0);
+                    pointer-events: all;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -309,7 +309,7 @@ class CollapsibleSelect extends Collapsible {
 
 class Collapsibles {
   constructor() {
-    this.nodes = document.querySelectorAll('.collapsible')
+    this.nodes = document.querySelectorAll('.collapsible');
     if (!this.nodes) return
     this.collapsibles = []
     this.init()
@@ -342,7 +342,9 @@ class Collapsibles {
       if (node.dataset.hasOwnProperty('select')) {
         this.collapsibles.push(new CollapsibleSelect({ node }))
       } else {
-        this.collapsibles.push(new Collapsible({ node }))
+        if ((node.classList.contains('collapsible-only-mobile') && window.matchMedia('(max-width: 1023px)').matches) || !node.classList.contains('collapsible-only-mobile')) {
+          this.collapsibles.push(new Collapsible({ node }))
+        }
       }
     })
     this.initEvents()
