@@ -1,10 +1,16 @@
 <section 
-  class="hero-main"
+  class="container block-hero"
   n:if="$title['text']"
+  style="--bg: url({$background_image['src']})"
 >
-  <div class="hero-main__cont">
-    <h1 n:ifcontent>{$title['text']}</h1>
-    <p n:ifcontent>{$text['text']}</p>
-    {tr_a($cta, "btn btn--brand")}
+  <div class="hero-container">
+    <div class="hero-text">
+      <h1 n:ifcontent>{$title['text']}</h1>
+      <p n:ifcontent>{$text['text']}</p>
+    </div>
+    <div class="action">
+      {tr_a($cta, "button primary")}
+      <button class="button secondary">test</button>
+    </div>
   </div>{* cont *}
 </section>

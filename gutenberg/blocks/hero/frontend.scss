@@ -1,29 +1,62 @@
-.hero-main {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  box-shadow: 0 0 0 1px black;
+@import '../../../src/scss/critical';
 
-  &__cont {
-    padding-top: 100px;
-    margin-bottom: 100px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+.block-hero {
+  background: $color-grey-200 var(--bg) no-repeat center center/cover;
+  background-blend-mode: multiply;
+  padding-top: $base * 10;
+  padding-bottom: $base * 10;
+
+  @include breakpoint-max(l) {
+    padding-top: $base * 5;
+    padding-bottom: $base * 5;
+
+    .hero-container {
+      gap: $base * 2;
+
+      .hero-text {
+        gap: $base;
+
+        h1 {
+          font-size: $display-m;
+          line-height: $display-m-line;
+        }
+      }
+    }
   }
 
-  h1,
-  p {
-    max-width: 700px;
+  @include breakpoint-max(s) {
+    .hero-container .action {
+      flex-direction: column;
+
+      .button,
+      button {
+        width: 100%;
+      }
+    }
   }
 
-  h1 {
-    font-size: 40px;
-    font-weight: 600;
-  }
+  .hero-container {
+    max-width: $base * 48;
+    display: flex;
+    flex-direction: column;
+    gap: $base * 3;
 
-  p {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    .hero-text {
+      flex-direction: column;
+      gap: $base * 1.5;
+
+      h1 {
+        color: $color-grey-50;
+      }
+      p {
+        color: $color-grey-200;
+      }
+    }
+    
+
+    div {
+      display: flex;
+      gap: $base * 0.5;
+    }
   }
 }
