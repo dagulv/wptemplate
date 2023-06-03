@@ -4,6 +4,7 @@
     "video",
     "breadcrumbs",
     "hero",
-    "repeater-fields-grid"
+    "repeater-fields-grid",
+    "accordion"
   ]
 }

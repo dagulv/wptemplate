@@ -8,7 +8,7 @@ final class Template9c18dbff7d extends Latte\Runtime\Template
 
 	public function main(array $ʟ_args): void
 	{
-		echo '<header class="header">
+		echo '<header class="header transparent">
 	<div class="container">
     <a 
       class="navbar-brand" 

@@ -23,15 +23,15 @@ final class Template0d013f3c19 extends Latte\Runtime\Template
 ';
 			ob_start(fn() => '');
 			try {
-				echo '      <h1>';
+				echo '      <span>';
 				ob_start();
 				try {
-					echo LR\Filters::escapeHtmlText($title['text']) /* line 8 */;
+					echo LR\Filters::escapeHtmlText($text['text']) /* line 8 */;
 
 				} finally {
 					$ʟ_ifc[0] = rtrim(ob_get_flush()) === '';
 				}
-				echo '</h1>
+				echo '</span>
 ';
 
 			} finally {
@@ -43,15 +43,15 @@ final class Template0d013f3c19 extends Latte\Runtime\Template
 			}
 			ob_start(fn() => '');
 			try {
-				echo '      <p>';
+				echo '      <h1>';
 				ob_start();
 				try {
-					echo LR\Filters::escapeHtmlText($text['text']) /* line 9 */;
+					echo LR\Filters::escapeHtmlText($title['text']) /* line 9 */;
 
 				} finally {
 					$ʟ_ifc[1] = rtrim(ob_get_flush()) === '';
 				}
-				echo '</p>
+				echo '</h1>
 ';
 
 			} finally {
@@ -62,12 +62,6 @@ final class Template0d013f3c19 extends Latte\Runtime\Template
 				}
 			}
 			echo '    </div>
-    <div class="action">
-      ';
-			echo LR\Filters::escapeHtmlText(tr_a($cta, 'button primary')) /* line 12 */;
-			echo '
-      <button class="button secondary">test</button>
-    </div>
   </div>
 </section>
 ';

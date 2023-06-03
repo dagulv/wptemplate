@@ -37,8 +37,8 @@
         outline: none;
     }
 
-    .navbar-toggler { background-image: url('wp-content/themes/wptemplate/assets/svg/hamburger.svg'); }
-    .navbar-closer { background-image: url('wp-content/themes/wptemplate/assets/svg/close.svg'); }
+    .navbar-toggler { background-image: url('/wp-content/themes/wptemplate/assets/svg/hamburger.svg'); }
+    .navbar-closer { background-image: url('/wp-content/themes/wptemplate/assets/svg/close.svg'); }
 
     .navbar {
       display: flex;
@@ -141,7 +141,7 @@
                 content: '';
                 width: $base;
                 height: $base;
-                background: url('wp-content/themes/wptemplate/assets/svg/chevron.svg') no-repeat center center;
+                background: url('/wp-content/themes/wptemplate/assets/svg/chevron.svg') no-repeat center center;
                 rotate: 180deg;
                 margin-left: $base * 0.75;
                 transition: $transition;
@@ -173,8 +173,10 @@
 
   @include breakpoint(l) {
     max-height: $base * 5;
-
+    
     .container {
+      align-content: center;
+      height: 100%;
   
       .navbar-brand {
         padding: $base 0;
@@ -254,6 +256,27 @@
     }
   }
 } // header
+
+.header.transparent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  transition: $transition;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.jsOnScroll-header .header.transparent {
+  background-color: #fff;
+
+  @include breakpoint(l) {
+    max-height: $base * 4;
+  }
+}
 
 
 // body.jsOnScroll-header {

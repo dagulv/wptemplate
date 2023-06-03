@@ -69,19 +69,18 @@ final class Template8556446467 extends Latte\Runtime\Template
       >
 ';
 				$this->renderBlock('acc_trigger', get_defined_vars()) /* line 47 */;
-				echo '        <span class="chevron"></span>
-      </button>
+				echo '      </button>
 
       <div 
         class="collapsible__content"
         role="region"
         aria-labelledby="acc_panel_';
-				echo LR\Filters::escapeHtmlAttr($panels_ids[$index]) /* line 54 */;
+				echo LR\Filters::escapeHtmlAttr($panels_ids[$index]) /* line 53 */;
 				echo '"
       >
         <div class="collapsible__content__inner">
 ';
-				$this->renderBlock('acc_content', get_defined_vars()) /* line 57 */;
+				$this->renderBlock('acc_content', get_defined_vars()) /* line 56 */;
 				echo '        </div>
       </div>
 
@@ -123,7 +122,7 @@ final class Template8556446467 extends Latte\Runtime\Template
 	}
 
 
-	/** {block acc_content} on line 57 */
+	/** {block acc_content} on line 56 */
 	public function blockAcc_content(array $ʟ_args): void
 	{
 	}

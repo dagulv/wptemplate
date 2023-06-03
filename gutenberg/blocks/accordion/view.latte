@@ -1,0 +1,21 @@
+<section class="block-accordion container">
+  {* {embed
+    tr_part('_accordion'),
+    items: $accordion,
+    collapse_siblings: true,
+    duration: 150
+  }
+    {block acc_trigger}
+      <h2>{$item['title']['text']}</h2>
+    {/block}
+    {block acc_content}
+      <p n:ifcontent>{$item['content']['text']}</p>
+    {/block}
+  {/embed} *}
+  <article n:foreach="$accordion as $item" aria-expanded="false">
+    <button>
+      <h2 n:ifcontent>{$item['title']['text']}</h2>
+    </button>
+    <p n:ifcontent>{$item['content']['text']}</p>
+  </article>
+</section>

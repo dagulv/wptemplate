@@ -1,0 +1,65 @@
+@import '../../../src/scss/critical';
+
+.block-accordion {
+    width: $base * 48;
+
+        article {
+          width: 100%;
+          border-top: $color-grey-100 1px solid;
+          padding-bottom: $base * 1.5;
+          cursor: pointer;
+        //   transition: $transition;
+
+          button {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            background-color: inherit;
+            outline: none;
+            color: $color-grey-800;
+            padding: 0;
+            padding-top: $base * 1.5;
+      
+            &::after {
+              content: '';
+              width: $base;
+              height: $base;
+              background: url('/wp-content/themes/wptemplate/assets/svg/chevron.svg') no-repeat center center;
+              transform: rotate(180deg);
+              transition: $transition;
+              color: inherit;
+            }
+      
+            h2 {
+              font-size: $text-l;
+              line-height: $text-l-line;
+              font-weight: $weight-medium;
+              color: inherit;
+            }
+          }
+
+          p {
+            height: 0;
+            overflow: hidden;
+            transition: $transition;
+          }
+      
+          &.active {
+            cursor: default;
+      
+            button {
+              color: $color-grey-900;
+      
+              &:after {
+                transform: rotate(0);
+              }
+      
+              
+            }
+
+            p {
+                margin-top: $base * 0.5;
+            }
+          }
+        }
+}

@@ -5,12 +5,12 @@
 >
   <div class="hero-container">
     <div class="hero-text">
+      <span n:ifcontent>{$text['text']}</span>
       <h1 n:ifcontent>{$title['text']}</h1>
-      <p n:ifcontent>{$text['text']}</p>
     </div>
-    <div class="action">
+    {* <div class="action">
       {tr_a($cta, "button primary")}
       <button class="button secondary">test</button>
-    </div>
+    </div> *}
   </div>{* cont *}
 </section>

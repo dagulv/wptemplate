@@ -3,23 +3,49 @@
 
   .collapsible {
     width: 100%;
-
+    border-top: $color-grey-100 1px solid;
+    
     &__trigger {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
+      background-color: inherit;
+      outline: none;
+      color: $color-grey-800;
+      padding: $base * 1.5 0;
+
+      &::after {
+        content: '';
+        width: $base;
+        height: $base;
+        background: url('/wp-content/themes/wptemplate/assets/svg/chevron.svg') no-repeat center center;
+        transform: rotate(180deg);
+        transition: $transition;
+        color: inherit;
+      }
+
+      h2 {
+        font-size: $text-l;
+        line-height: $text-l-line;
+        font-weight: $weight-medium;
+        color: inherit;
+      }
     }
-  }
 
-  .collapsible__content__inner {
-    justify-content: center;
-    padding: 20px;
-    width: 100%;
-  }
+    &.transition-forwards,
+    &.active {
+      padding-bottom: $base * 1.5;
 
-  .accordion {
-    margin-bottom: 0;
+      .collapsible__trigger {
+        color: $color-grey-900;
+        padding-bottom: 0;
 
-    .collapsible__inner {
-      padding-bottom: 10px;
+        &:after {
+          transform: rotate(0);
+        }
+
+        
+      }
     }
   }
 }

@@ -1,0 +1,45 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "accordion",
+    "BLOCK_TITLE": "Accordion",
+    "keywords": [
+      "Accordion",
+      "faq"
+    ],
+    "hasSidebar": true,
+    "hasExample": true
+  },
+  "attributes": {
+    "accordion": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Accordions",
+        "subfields": {
+          "title": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Titel"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "content": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Innehåll",
+              "variation": "long"
+            },
+            "default": {
+              "text": ""
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}

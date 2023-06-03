@@ -12,7 +12,7 @@
       "type": "object",
       "field_meta": {
         "type": "text",
-        "label": "Title",
+        "label": "Rubrik",
         "col": "1"
       },
       "default": {
@@ -49,6 +49,7 @@
       "type": "object",
       "field_meta": {
         "type": "image",
+        "label": "Bakgrundsbild",
         "col": "2"
       },
       "default": {
