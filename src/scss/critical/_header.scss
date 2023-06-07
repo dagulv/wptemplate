@@ -14,6 +14,7 @@
   display: block;
   max-height: $base * 3.5;
   height: 100%;
+  z-index: 100;
 
   .container {
     display: flex;
@@ -49,7 +50,7 @@
 
         display: block;
         visibility: hidden;
-        background-color: #fff;
+        background-color: $header-color;
 
         transition: transform 250ms ease-in, visibility 250ms;
         transform: translateX(-100%);
@@ -60,6 +61,12 @@
         }
 
         .navbar-collapse {
+          position: fixed;
+          inset: 0;
+          top: 100%;
+          height: calc(100vh - 100%);
+          background-color: #fff;
+          color: $color-grey-900;
 
           .navbar-nav {
             flex-direction: column;
@@ -128,24 +135,30 @@
           cursor: pointer;
 
           &.menu-item-has-children {
-            &:hover,
-            &.transition-forwards,
-            &.active {
-              .collapsible__trigger > a::after {
-                rotate: 0deg;
+            
+            &:hover a,
+            &.transition-forwards a,
+            &.active a {
+              color: $color-blue-900;
+
+              &::after {
+                background: $color-blue-900;
+                rotate: 0;
               }
             }
-
+            
             .collapsible__trigger {
               & > a::after {
                 content: '';
                 width: $base;
                 height: $base;
-                background: url('/wp-content/themes/wptemplate/assets/svg/chevron.svg') no-repeat center center;
+                background: currentColor;
+                mask: url('/wp-content/themes/wptemplate/assets/svg/chevron.svg') no-repeat center center;
                 rotate: 180deg;
                 margin-left: $base * 0.75;
                 transition: $transition;
               }
+
             }
           }
 
@@ -159,9 +172,6 @@
             padding: 0 $base;
             transition: $transition;
 
-            &:hover {
-              color: $color-blue-900;
-            }
           }
 
           
@@ -262,6 +272,7 @@
   left: 0;
   right: 0;
   transition: $transition;
+  color: #fff;
 
   .navbar-brand {
     display: flex;
@@ -271,7 +282,7 @@
 }
 
 .jsOnScroll-header .header.transparent {
-  background-color: #fff;
+  background-color: $header-color;
 
   @include breakpoint(l) {
     max-height: $base * 4;

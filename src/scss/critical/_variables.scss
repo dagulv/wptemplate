@@ -72,6 +72,9 @@ $shadow-m : 0px 10px 20px rgba(16, 42, 67, 0.15), 0px 3px 6px rgba(16, 42, 67, 0
 
 $focus-shadow: 0px 0px 0px 4px $color-blue-50, 0px 1px 2px rgba(16, 24, 40, 0.05);
 
+//Layout
+$header-color: $color-blue-900;
+
 $breakpoints: (
 	's':  640px,
 	'm':  768px,
