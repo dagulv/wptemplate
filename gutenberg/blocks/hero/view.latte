@@ -1,9 +1,9 @@
 <section 
-  class="container block-hero"
+  class="block-hero"
   n:if="$title['text']"
   style="--bg: url({$background_image['src']})"
 >
-  <div class="hero-container">
+  <div class="hero-container container">
     <div class="hero-text">
       <span n:ifcontent>{$text['text']}</span>
       <h1 n:ifcontent>{$title['text']}</h1>
