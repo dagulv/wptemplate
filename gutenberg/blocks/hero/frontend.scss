@@ -1,14 +1,13 @@
 @import '../../../src/scss/critical';
 
 .block-hero {
+  position: relative;
   background: $color-grey-200 var(--bg) no-repeat center center/cover;
   background-blend-mode: multiply;
-  padding-top: $base * 10;
-  padding-bottom: $base * 10;
+  height: $base * 50;
 
   @include breakpoint-max(l) {
-    padding-top: $base * 5;
-    padding-bottom: $base * 5;
+    max-height: $base * 40;
 
     .hero-container {
       gap: $base * 2;
@@ -25,21 +24,34 @@
   }
 
   @include breakpoint-max(s) {
-    .hero-container .action {
-      flex-direction: column;
+    max-height: $base * 30;
 
-      .button,
-      button {
-        width: 100%;
+    .hero-container {
+      h1 {
+        word-spacing: 9999px;
+      }
+
+      .action {
+        flex-direction: column;
+  
+        .button,
+        button {
+          width: 100%;
+        }
       }
     }
+    
   }
 
   .hero-container {
-    // max-width: $base * 48;
+    position: relative;
+    top: 70%;
+    transform: translateY(-50%);
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: $base * 3;
+    text-align: right;
 
     .hero-text {
       flex-direction: column;
