@@ -36,7 +36,8 @@ body {
 .container {
   padding-left: $base;
   padding-right: $base;
-  max-width: $base * 80;
+  max-width: $base * (80 + 10);
+  margin: 0 auto;
 
   @include breakpoint(m) {
     padding-left: $base * 2;
